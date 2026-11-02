@@ -842,3 +842,538 @@ Object does not exist, or operation cannot be performed.
 [0m22:11:34.525748 [debug] [Dummy-1   ]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 2.6822734, "process_in_blocks": "0", "process_kernel_time": 0.78, "process_mem_max_rss": "537340", "process_out_blocks": "0", "process_user_time": 4.56}
 [0m22:11:34.526381 [debug] [Dummy-1   ]: Command `cli compile` succeeded at 22:11:34.526120 after 2.68 seconds
 [0m22:11:34.526937 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 02:48:43.510466 | 5e114186-2239-4c1e-94cc-7ab36c6b14fe ==============================
+[0m02:48:43.510466 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m02:48:43.511366 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/tmp/dbt_effective_profiles_h3k5zomq', 'debug': 'False', 'warn_error': 'None', 'log_path': '/tmp/dbt/logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt ', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'False'}
+[0m02:48:43.707901 [info ] [Dummy-1   ]: State adapter: dbt-state v0.0.0 is disabled
+[0m02:48:43.798385 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m02:48:44.323865 [error] [Dummy-1   ]: Encountered an error:
+Compilation Error
+  dbt found 1 package(s) specified in packages.yml, but only 0 package(s) installed in dbt_packages. Run "dbt deps" to install package dependencies.
+[0m02:48:44.326234 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.8904721, "process_in_blocks": "0", "process_kernel_time": 0.9, "process_mem_max_rss": "415868", "process_out_blocks": "0", "process_user_time": 3.21}
+[0m02:48:44.326955 [debug] [Dummy-1   ]: Command `cli run` failed at 02:48:44.326717 after 0.89 seconds
+[0m02:48:44.327607 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 02:49:42.874299 | 2afb2c21-e5a4-4e4b-aeab-fb0a67883c75 ==============================
+[0m02:49:42.874299 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m02:49:42.875293 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/tmp/dbt_effective_profiles_w4av2kyf', 'debug': 'False', 'version_check': 'True', 'log_path': '/tmp/dbt/logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt ', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'False'}
+[0m02:49:43.073671 [info ] [Dummy-1   ]: State adapter: dbt-state v0.0.0 is disabled
+[0m02:49:43.164926 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m02:49:43.693428 [error] [Dummy-1   ]: Encountered an error:
+Compilation Error
+  dbt found 1 package(s) specified in packages.yml, but only 0 package(s) installed in dbt_packages. Run "dbt deps" to install package dependencies.
+[0m02:49:43.695737 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.8971195, "process_in_blocks": "0", "process_kernel_time": 0.68, "process_mem_max_rss": "397852", "process_out_blocks": "0", "process_user_time": 3.33}
+[0m02:49:43.696417 [debug] [Dummy-1   ]: Command `cli run` failed at 02:49:43.696151 after 0.90 seconds
+[0m02:49:43.697099 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 02:50:10.569759 | 27be40a3-cad5-45ef-af00-f23d2f798dd9 ==============================
+[0m02:50:10.569759 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m02:50:10.570614 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/tmp/dbt_effective_profiles_7ofkh8vj', 'debug': 'False', 'warn_error': 'None', 'log_path': '/tmp/dbt/logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt ', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'False'}
+[0m02:50:10.709929 [info ] [Dummy-1   ]: State adapter: dbt-state v0.0.0 is disabled
+[0m02:50:10.754754 [debug] [Dummy-1   ]: Set downloads directory='/tmp/dbt-downloads-xbhs2ukp'
+[0m02:50:10.755546 [debug] [Dummy-1   ]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m02:50:10.759468 [debug] [Dummy-1   ]: External call exception: HTTPSConnectionPool(host='hub.getdbt.com', port=443): Max retries exceeded with url: /api/v1/index.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0xf88c224ae7d0>: Failed to establish a new connection: [Errno 16] Device or resource busy'))
+[0m02:50:10.759984 [debug] [Dummy-1   ]: Retrying external call. Attempt: 0 Max attempts: 5
+[0m02:50:11.760958 [debug] [Dummy-1   ]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m02:50:11.762729 [debug] [Dummy-1   ]: External call exception: HTTPSConnectionPool(host='hub.getdbt.com', port=443): Max retries exceeded with url: /api/v1/index.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0xf88c224c0a10>: Failed to establish a new connection: [Errno 16] Device or resource busy'))
+[0m02:50:11.763231 [debug] [Dummy-1   ]: Retrying external call. Attempt: 1 Max attempts: 5
+[0m02:50:12.764586 [debug] [Dummy-1   ]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m02:50:12.766409 [debug] [Dummy-1   ]: External call exception: HTTPSConnectionPool(host='hub.getdbt.com', port=443): Max retries exceeded with url: /api/v1/index.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0xf88c224c27d0>: Failed to establish a new connection: [Errno 16] Device or resource busy'))
+[0m02:50:12.766888 [debug] [Dummy-1   ]: Retrying external call. Attempt: 2 Max attempts: 5
+[0m02:50:13.768252 [debug] [Dummy-1   ]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m02:50:13.770225 [debug] [Dummy-1   ]: External call exception: HTTPSConnectionPool(host='hub.getdbt.com', port=443): Max retries exceeded with url: /api/v1/index.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0xf88c224cc690>: Failed to establish a new connection: [Errno 16] Device or resource busy'))
+[0m02:50:13.770717 [debug] [Dummy-1   ]: Retrying external call. Attempt: 3 Max attempts: 5
+[0m02:50:14.772123 [debug] [Dummy-1   ]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m02:50:14.773915 [debug] [Dummy-1   ]: External call exception: HTTPSConnectionPool(host='hub.getdbt.com', port=443): Max retries exceeded with url: /api/v1/index.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0xf88c224ce490>: Failed to establish a new connection: [Errno 16] Device or resource busy'))
+[0m02:50:14.774383 [debug] [Dummy-1   ]: Retrying external call. Attempt: 4 Max attempts: 5
+[0m02:50:15.775642 [debug] [Dummy-1   ]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m02:50:15.777614 [error] [Dummy-1   ]: Encountered an error:
+External connection exception occurred: HTTPSConnectionPool(host='hub.getdbt.com', port=443): Max retries exceeded with url: /api/v1/index.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0xf88c224e4310>: Failed to establish a new connection: [Errno 16] Device or resource busy'))
+[0m02:50:15.792321 [error] [Dummy-1   ]: Traceback (most recent call last):
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/socket.py", line 974, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 16] Device or resource busy
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connection.py", line 704, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0xf88c224ae7d0>: Failed to establish a new connection: [Errno 16] Device or resource busy
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='hub.getdbt.com', port=443): Max retries exceeded with url: /api/v1/index.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0xf88c224ae7d0>: Failed to establish a new connection: [Errno 16] Device or resource busy'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt_common/utils/connection.py", line 21, in connection_exception_retry
+    return fn()
+           ^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/clients/registry.py", line 168, in _get_index
+    resp = requests.get(url, timeout=30)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='hub.getdbt.com', port=443): Max retries exceeded with url: /api/v1/index.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0xf88c224ae7d0>: Failed to establish a new connection: [Errno 16] Device or resource busy'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/socket.py", line 974, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 16] Device or resource busy
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connection.py", line 704, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0xf88c224c0a10>: Failed to establish a new connection: [Errno 16] Device or resource busy
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='hub.getdbt.com', port=443): Max retries exceeded with url: /api/v1/index.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0xf88c224c0a10>: Failed to establish a new connection: [Errno 16] Device or resource busy'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt_common/utils/connection.py", line 21, in connection_exception_retry
+    return fn()
+           ^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/clients/registry.py", line 168, in _get_index
+    resp = requests.get(url, timeout=30)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='hub.getdbt.com', port=443): Max retries exceeded with url: /api/v1/index.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0xf88c224c0a10>: Failed to establish a new connection: [Errno 16] Device or resource busy'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/socket.py", line 974, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 16] Device or resource busy
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connection.py", line 704, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0xf88c224c27d0>: Failed to establish a new connection: [Errno 16] Device or resource busy
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='hub.getdbt.com', port=443): Max retries exceeded with url: /api/v1/index.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0xf88c224c27d0>: Failed to establish a new connection: [Errno 16] Device or resource busy'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt_common/utils/connection.py", line 21, in connection_exception_retry
+    return fn()
+           ^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/clients/registry.py", line 168, in _get_index
+    resp = requests.get(url, timeout=30)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='hub.getdbt.com', port=443): Max retries exceeded with url: /api/v1/index.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0xf88c224c27d0>: Failed to establish a new connection: [Errno 16] Device or resource busy'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/socket.py", line 974, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 16] Device or resource busy
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connection.py", line 704, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0xf88c224cc690>: Failed to establish a new connection: [Errno 16] Device or resource busy
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='hub.getdbt.com', port=443): Max retries exceeded with url: /api/v1/index.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0xf88c224cc690>: Failed to establish a new connection: [Errno 16] Device or resource busy'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt_common/utils/connection.py", line 21, in connection_exception_retry
+    return fn()
+           ^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/clients/registry.py", line 168, in _get_index
+    resp = requests.get(url, timeout=30)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='hub.getdbt.com', port=443): Max retries exceeded with url: /api/v1/index.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0xf88c224cc690>: Failed to establish a new connection: [Errno 16] Device or resource busy'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/socket.py", line 974, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 16] Device or resource busy
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connection.py", line 704, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0xf88c224ce490>: Failed to establish a new connection: [Errno 16] Device or resource busy
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='hub.getdbt.com', port=443): Max retries exceeded with url: /api/v1/index.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0xf88c224ce490>: Failed to establish a new connection: [Errno 16] Device or resource busy'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt_common/utils/connection.py", line 21, in connection_exception_retry
+    return fn()
+           ^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/clients/registry.py", line 168, in _get_index
+    resp = requests.get(url, timeout=30)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='hub.getdbt.com', port=443): Max retries exceeded with url: /api/v1/index.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0xf88c224ce490>: Failed to establish a new connection: [Errno 16] Device or resource busy'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/socket.py", line 974, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 16] Device or resource busy
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connection.py", line 704, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0xf88c224e4310>: Failed to establish a new connection: [Errno 16] Device or resource busy
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='hub.getdbt.com', port=443): Max retries exceeded with url: /api/v1/index.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0xf88c224e4310>: Failed to establish a new connection: [Errno 16] Device or resource busy'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt_common/utils/connection.py", line 21, in connection_exception_retry
+    return fn()
+           ^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/clients/registry.py", line 168, in _get_index
+    resp = requests.get(url, timeout=30)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='hub.getdbt.com', port=443): Max retries exceeded with url: /api/v1/index.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0xf88c224e4310>: Failed to establish a new connection: [Errno 16] Device or resource busy'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/cli/requires.py", line 153, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/cli/requires.py", line 103, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/cli/requires.py", line 218, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/cli/requires.py", line 264, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/cli/main.py", line 455, in deps
+    results = task.run()
+              ^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/task/deps.py", line 211, in run
+    self.lock()
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/task/deps.py", line 187, in lock
+    resolved_deps = resolve_packages(packages, self.project, self.cli_vars)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/deps/resolver.py", line 131, in resolve_packages
+    target = final[package].resolved().fetch_metadata(project, renderer)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/deps/registry.py", line 98, in resolved
+    self._check_in_index()
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/deps/registry.py", line 75, in _check_in_index
+    index = registry.index_cached()
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/utils.py", line 127, in __call__
+    value = self.func(*args)
+            ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/clients/registry.py", line 189, in index
+    return connection_exception_retry(get_index_fn, 5)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt_common/utils/connection.py", line 34, in connection_exception_retry
+    return connection_exception_retry(fn, max_attempts, attempt + 1)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt_common/utils/connection.py", line 34, in connection_exception_retry
+    return connection_exception_retry(fn, max_attempts, attempt + 1)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt_common/utils/connection.py", line 34, in connection_exception_retry
+    return connection_exception_retry(fn, max_attempts, attempt + 1)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [Previous line repeated 2 more times]
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt_common/utils/connection.py", line 36, in connection_exception_retry
+    raise ConnectionError("External connection exception occurred: " + str(exc))
+dbt_common.exceptions.connection.ConnectionError: External connection exception occurred: HTTPSConnectionPool(host='hub.getdbt.com', port=443): Max retries exceeded with url: /api/v1/index.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0xf88c224e4310>: Failed to establish a new connection: [Errno 16] Device or resource busy'))
+
+[0m02:50:15.795301 [debug] [Dummy-1   ]: Resource report: {"command_name": "deps", "command_success": false, "command_wall_clock_time": 5.2996225, "process_in_blocks": "0", "process_kernel_time": 0.47, "process_mem_max_rss": "410740", "process_out_blocks": "0", "process_user_time": 2.98}
+[0m02:50:15.795921 [debug] [Dummy-1   ]: Command `cli deps` failed at 02:50:15.795677 after 5.30 seconds
+[0m02:50:15.796417 [debug] [Dummy-1   ]: Flushing usage events

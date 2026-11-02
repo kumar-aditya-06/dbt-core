@@ -17,7 +17,7 @@ GRANT USAGE ON INTEGRATION dbt_ext_access TO ROLE ACCOUNTADMIN;
 
 ALTER DBT PROJECT "dbt-core" add  EXTERNAL_ACCESS_INTEGRATIONS = (dbt_ext_access);
 
----- now we can use or execute dbt deps too ..
+---- now we can use below or execute dbt deps too ..
 /*
 select {{ dbt_utils.generate_surrogate_key(['col1', 'col2']) }} as sk
 from {{ ref('my_model') }}
