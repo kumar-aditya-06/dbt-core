@@ -1,0 +1,10 @@
+_ANALYTICS_DEMO:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      role: "{{ env_var('DBT_CURRENT_ROLE') }}"
+      warehouse: "{{ env_var('DBT_CURRENT_WH') }}"
+      database: "{{ env_var('DBT_CURRENT_DB') }}"
+      schema: "{{ env_var('DBT_CURRENT_SCHEMA' )}}"
+      threads: 8

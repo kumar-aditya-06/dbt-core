@@ -1,0 +1,844 @@
+
+
+============================== 22:09:21.107377 | d67ebc27-cdb5-45d1-b982-25f4357b1706 ==============================
+[0m22:09:21.107377 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m22:09:21.108318 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': '/tmp/dbt_effective_profiles_2dji2qoz', 'log_path': '/tmp/dbt/logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt ', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'False'}
+[0m22:09:21.300188 [info ] [Dummy-1   ]: State adapter: dbt-state v0.0.0 is disabled
+[0m22:09:21.389212 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m22:09:21.918641 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m22:09:21.920167 [info ] [Dummy-1   ]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m22:09:23.117666 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m22:09:23.119624 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m22:09:23.150666 [info ] [Dummy-1   ]: Found 1 model, 474 macros
+[0m22:09:23.152553 [info ] [Dummy-1   ]: 
+[0m22:09:23.153067 [info ] [Dummy-1   ]: Concurrency: 8 threads (target='dev')
+[0m22:09:23.153519 [info ] [Dummy-1   ]: 
+[0m22:09:23.154289 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m22:09:23.156549 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_COMPUTE_WH_ADITYAKUMAR'
+[0m22:09:23.242618 [debug] [ThreadPool]: Using snowflake connection "list_COMPUTE_WH_ADITYAKUMAR"
+[0m22:09:23.243233 [debug] [ThreadPool]: On list_COMPUTE_WH_ADITYAKUMAR: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "_ANALYTICS_DEMO", "target_name": "dev", "connection_name": "list_COMPUTE_WH_ADITYAKUMAR"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m22:09:23.243694 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:09:23.492278 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "_ANALYTICS_DEMO", "target_name": "dev", "connection_name": "list_COMPUTE_WH_ADITYAKUMAR"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m22:09:23.492839 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m22:09:23.493301 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:09:23.733010 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro list_relations_without_caching
+[0m22:09:23.733553 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m22:09:23.734017 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:09:23.980136 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m22:09:23.981048 [debug] [Dummy-1   ]: Connection 'list_COMPUTE_WH_ADITYAKUMAR' was properly closed.
+[0m22:09:23.981935 [error] [Dummy-1   ]: Encountered an error:
+Failed to use database COMPUTE_WH: 002043 (02000): SQL compilation error:
+Object does not exist, or operation cannot be performed.
+[0m22:09:23.992302 [error] [Dummy-1   ]: Traceback (most recent call last):
+  File "_udf_code.py", line 4381, in new_open_method
+    use_database_with_error_interception(new_session, params_dict, creds.database, scrub=scrub)
+  File "_udf_code.py", line 4753, in use_database_with_error_interception
+    return _intercept_user_errors("session.use_database", params_dict, lambda: session.use_database(database), scrub=scrub)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "_udf_code.py", line 4629, in _intercept_user_errors
+    return operation_callable()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "_udf_code.py", line 4753, in <lambda>
+    return _intercept_user_errors("session.use_database", params_dict, lambda: session.use_database(database), scrub=scrub)
+                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/session.py", line 3919, in use_database
+    self._use_object(database, "database")
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/session.py", line 3980, in _use_object
+    self._run_query(query)
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/session.py", line 2837, in _run_query
+    return self._conn.run_query(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 133, in wrap
+    raise ex
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 127, in wrap
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 520, in run_query
+    raise ex
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 505, in run_query
+    results_cursor = self.execute_and_notify_query_listener(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 446, in execute_and_notify_query_listener
+    raise ex
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 437, in execute_and_notify_query_listener
+    results_cursor = self._cursor.execute(query, **kwargs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "_udf_code.py", line 3782, in wrapper
+    return original_execute(self, sql, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/connector/cursor.py", line 1092, in execute
+    Error.errorhandler_wrapper(
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/connector/errors.py", line 232, in errorhandler_wrapper
+    handed_over = Error.hand_to_other_handler(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/connector/errors.py", line 287, in hand_to_other_handler
+    cursor.errorhandler(connection, cursor, error_class, error_value)
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/connector/errors.py", line 165, in default_errorhandler
+    raise error_class(
+snowflake.connector.errors.ProgrammingError: 002043 (02000): SQL compilation error:
+Object does not exist, or operation cannot be performed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/snowflake/connections.py", line 341, in exception_handler
+    yield
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/sql/connections.py", line 146, in add_query
+    cursor = connection.handle.cursor()
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/contracts/connection.py", line 96, in handle
+    self._handle.resolve(self)
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/contracts/connection.py", line 120, in resolve
+    return self.opener(connection)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "_udf_code.py", line 4383, in new_open_method
+    raise ValueError(f"Failed to use database {_scrub(creds.database)}: {_scrub(str(e))}") from (Exception(f"{type(e).__name__}: {_scrub(str(e))}") if should_scrub_secrets else e)
+ValueError: Failed to use database COMPUTE_WH: 002043 (02000): SQL compilation error:
+Object does not exist, or operation cannot be performed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "_udf_code.py", line 4381, in new_open_method
+    use_database_with_error_interception(new_session, params_dict, creds.database, scrub=scrub)
+  File "_udf_code.py", line 4753, in use_database_with_error_interception
+    return _intercept_user_errors("session.use_database", params_dict, lambda: session.use_database(database), scrub=scrub)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "_udf_code.py", line 4629, in _intercept_user_errors
+    return operation_callable()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "_udf_code.py", line 4753, in <lambda>
+    return _intercept_user_errors("session.use_database", params_dict, lambda: session.use_database(database), scrub=scrub)
+                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/session.py", line 3919, in use_database
+    self._use_object(database, "database")
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/session.py", line 3980, in _use_object
+    self._run_query(query)
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/session.py", line 2837, in _run_query
+    return self._conn.run_query(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 133, in wrap
+    raise ex
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 127, in wrap
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 520, in run_query
+    raise ex
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 505, in run_query
+    results_cursor = self.execute_and_notify_query_listener(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 446, in execute_and_notify_query_listener
+    raise ex
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 437, in execute_and_notify_query_listener
+    results_cursor = self._cursor.execute(query, **kwargs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "_udf_code.py", line 3782, in wrapper
+    return original_execute(self, sql, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/connector/cursor.py", line 1092, in execute
+    Error.errorhandler_wrapper(
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/connector/errors.py", line 232, in errorhandler_wrapper
+    handed_over = Error.hand_to_other_handler(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/connector/errors.py", line 287, in hand_to_other_handler
+    cursor.errorhandler(connection, cursor, error_class, error_value)
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/connector/errors.py", line 165, in default_errorhandler
+    raise error_class(
+snowflake.connector.errors.ProgrammingError: 002043 (02000): SQL compilation error:
+Object does not exist, or operation cannot be performed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/snowflake/connections.py", line 341, in exception_handler
+    yield
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/base/impl.py", line 1276, in execute_macro
+    result = macro_function(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt_common/clients/jinja.py", line 421, in __call__
+    return self.call_macro(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt_common/clients/jinja.py", line 389, in call_macro
+    return macro(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/jinja2/runtime.py", line 770, in __call__
+    return self._invoke(arguments, autoescape)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/jinja2/runtime.py", line 784, in _invoke
+    rv = self._func(*arguments)
+         ^^^^^^^^^^^^^^^^^^^^^^
+  File "<template>", line 21, in macro
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/jinja2/sandbox.py", line 401, in call
+    return __context.call(__obj, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/jinja2/runtime.py", line 303, in call
+    return __obj(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/clients/jinja.py", line 91, in __call__
+    return self.call_macro(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt_common/clients/jinja.py", line 389, in call_macro
+    return macro(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/jinja2/runtime.py", line 770, in __call__
+    return self._invoke(arguments, autoescape)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/jinja2/runtime.py", line 784, in _invoke
+    rv = self._func(*arguments)
+         ^^^^^^^^^^^^^^^^^^^^^^
+  File "<template>", line 59, in macro
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/jinja2/sandbox.py", line 401, in call
+    return __context.call(__obj, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/jinja2/runtime.py", line 303, in call
+    return __obj(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/clients/jinja.py", line 91, in __call__
+    return self.call_macro(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt_common/clients/jinja.py", line 389, in call_macro
+    return macro(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/jinja2/runtime.py", line 770, in __call__
+    return self._invoke(arguments, autoescape)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/jinja2/runtime.py", line 784, in _invoke
+    rv = self._func(*arguments)
+         ^^^^^^^^^^^^^^^^^^^^^^
+  File "<template>", line 33, in macro
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/jinja2/sandbox.py", line 401, in call
+    return __context.call(__obj, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/jinja2/runtime.py", line 303, in call
+    return __obj(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/clients/jinja.py", line 91, in __call__
+    return self.call_macro(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt_common/clients/jinja.py", line 389, in call_macro
+    return macro(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/jinja2/runtime.py", line 770, in __call__
+    return self._invoke(arguments, autoescape)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/jinja2/runtime.py", line 784, in _invoke
+    rv = self._func(*arguments)
+         ^^^^^^^^^^^^^^^^^^^^^^
+  File "<template>", line 52, in macro
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/jinja2/sandbox.py", line 401, in call
+    return __context.call(__obj, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/jinja2/runtime.py", line 303, in call
+    return __obj(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt_common/record.py", line 507, in record_replay_wrapper
+    return func_to_record(*call_args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/base/impl.py", line 438, in execute
+    return self.connections.execute(sql=sql, auto_begin=auto_begin, fetch=fetch, limit=limit)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/snowflake/connections.py", line 538, in execute
+    _, cursor = self.add_query(sql, auto_begin)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/snowflake/connections.py", line 575, in add_query
+    connection, cursor = self._add_standard_queries(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/snowflake/connections.py", line 631, in _add_standard_queries
+    connection, cursor = self.add_standard_query(query, **kwargs)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/snowflake/connections.py", line 549, in add_standard_query
+    return super().add_query(self._add_query_comment(sql), **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/sql/connections.py", line 130, in add_query
+    with self.exception_handler(sql):
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/snowflake/connections.py", line 374, in exception_handler
+    self.rollback_if_open()
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/base/connections.py", line 125, in rollback_if_open
+    if conn is not None and conn.handle and conn.transaction_open:
+                            ^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/contracts/connection.py", line 96, in handle
+    self._handle.resolve(self)
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/contracts/connection.py", line 120, in resolve
+    return self.opener(connection)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "_udf_code.py", line 4383, in new_open_method
+    raise ValueError(f"Failed to use database {_scrub(creds.database)}: {_scrub(str(e))}") from (Exception(f"{type(e).__name__}: {_scrub(str(e))}") if should_scrub_secrets else e)
+ValueError: Failed to use database COMPUTE_WH: 002043 (02000): SQL compilation error:
+Object does not exist, or operation cannot be performed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "_udf_code.py", line 4381, in new_open_method
+    use_database_with_error_interception(new_session, params_dict, creds.database, scrub=scrub)
+  File "_udf_code.py", line 4753, in use_database_with_error_interception
+    return _intercept_user_errors("session.use_database", params_dict, lambda: session.use_database(database), scrub=scrub)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "_udf_code.py", line 4629, in _intercept_user_errors
+    return operation_callable()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "_udf_code.py", line 4753, in <lambda>
+    return _intercept_user_errors("session.use_database", params_dict, lambda: session.use_database(database), scrub=scrub)
+                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/session.py", line 3919, in use_database
+    self._use_object(database, "database")
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/session.py", line 3980, in _use_object
+    self._run_query(query)
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/session.py", line 2837, in _run_query
+    return self._conn.run_query(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 133, in wrap
+    raise ex
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 127, in wrap
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 520, in run_query
+    raise ex
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 505, in run_query
+    results_cursor = self.execute_and_notify_query_listener(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 446, in execute_and_notify_query_listener
+    raise ex
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 437, in execute_and_notify_query_listener
+    results_cursor = self._cursor.execute(query, **kwargs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "_udf_code.py", line 3782, in wrapper
+    return original_execute(self, sql, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/connector/cursor.py", line 1092, in execute
+    Error.errorhandler_wrapper(
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/connector/errors.py", line 232, in errorhandler_wrapper
+    handed_over = Error.hand_to_other_handler(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/connector/errors.py", line 287, in hand_to_other_handler
+    cursor.errorhandler(connection, cursor, error_class, error_value)
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/connector/errors.py", line 165, in default_errorhandler
+    raise error_class(
+snowflake.connector.errors.ProgrammingError: 002043 (02000): SQL compilation error:
+Object does not exist, or operation cannot be performed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/cli/requires.py", line 153, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/cli/requires.py", line 103, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/cli/requires.py", line 235, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/cli/requires.py", line 264, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/cli/requires.py", line 311, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/cli/requires.py", line 328, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/cli/main.py", line 341, in compile
+    results = task.run()
+              ^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/task/runnable.py", line 619, in run
+    result = self.execute_with_hooks(selected_uids)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/task/runnable.py", line 557, in execute_with_hooks
+    before_run_status = self.before_run(adapter, selected_uids)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/task/runnable.py", line 533, in before_run
+    self.populate_adapter_cache(adapter)
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/task/runnable.py", line 522, in populate_adapter_cache
+    adapter.set_relations_cache(cachable_nodes)
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/base/impl.py", line 618, in set_relations_cache
+    self._relations_cache_for_schemas(relation_configs, required_schemas)
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/base/impl.py", line 594, in _relations_cache_for_schemas
+    for relation in future.result():
+                    ^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt_common/utils/executor.py", line 20, in connected
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/snowflake/impl.py", line 258, in list_relations_without_caching
+    schema_objects = self.execute_macro(LIST_RELATIONS_MACRO_NAME, kwargs=kwargs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/base/impl.py", line 1275, in execute_macro
+    with self.connections.exception_handler(f"macro {macro_name}"):
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/snowflake/connections.py", line 374, in exception_handler
+    self.rollback_if_open()
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/base/connections.py", line 125, in rollback_if_open
+    if conn is not None and conn.handle and conn.transaction_open:
+                            ^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/contracts/connection.py", line 96, in handle
+    self._handle.resolve(self)
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/contracts/connection.py", line 120, in resolve
+    return self.opener(connection)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "_udf_code.py", line 4383, in new_open_method
+    raise ValueError(f"Failed to use database {_scrub(creds.database)}: {_scrub(str(e))}") from (Exception(f"{type(e).__name__}: {_scrub(str(e))}") if should_scrub_secrets else e)
+ValueError: Failed to use database COMPUTE_WH: 002043 (02000): SQL compilation error:
+Object does not exist, or operation cannot be performed.
+
+[0m22:09:23.994980 [debug] [Dummy-1   ]: Resource report: {"command_name": "compile", "command_success": false, "command_wall_clock_time": 2.9624453, "process_in_blocks": "0", "process_kernel_time": 0.81, "process_mem_max_rss": "487308", "process_out_blocks": "0", "process_user_time": 4.57}
+[0m22:09:23.995637 [debug] [Dummy-1   ]: Command `cli compile` failed at 22:09:23.995382 after 2.96 seconds
+[0m22:09:23.996237 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 22:10:26.963851 | 468ccaa9-6891-4447-beb2-a1792418aa94 ==============================
+[0m22:10:26.963851 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m22:10:26.964811 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/tmp/dbt_effective_profiles_vsfhube5', 'log_path': '/tmp/dbt/logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt ', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'False'}
+[0m22:10:27.157037 [info ] [Dummy-1   ]: State adapter: dbt-state v0.0.0 is disabled
+[0m22:10:27.247180 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m22:10:27.767994 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m22:10:27.858544 [info ] [Dummy-1   ]: Unable to do partial parsing because profile has changed
+[0m22:10:29.021334 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m22:10:29.023220 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m22:10:29.053056 [info ] [Dummy-1   ]: Found 1 model, 474 macros
+[0m22:10:29.054786 [info ] [Dummy-1   ]: 
+[0m22:10:29.055297 [info ] [Dummy-1   ]: Concurrency: 8 threads (target='dev')
+[0m22:10:29.055741 [info ] [Dummy-1   ]: 
+[0m22:10:29.056613 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m22:10:29.058798 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_VW_ADITYAKUMAR'
+[0m22:10:29.145145 [debug] [ThreadPool]: Using snowflake connection "list_DBT_VW_ADITYAKUMAR"
+[0m22:10:29.145757 [debug] [ThreadPool]: On list_DBT_VW_ADITYAKUMAR: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "_ANALYTICS_DEMO", "target_name": "dev", "connection_name": "list_DBT_VW_ADITYAKUMAR"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m22:10:29.146278 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:10:29.400267 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "_ANALYTICS_DEMO", "target_name": "dev", "connection_name": "list_DBT_VW_ADITYAKUMAR"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m22:10:29.400863 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m22:10:29.401342 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:10:29.636658 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro list_relations_without_caching
+[0m22:10:29.637226 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m22:10:29.637686 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:10:29.866673 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m22:10:29.867383 [debug] [Dummy-1   ]: Connection 'list_DBT_VW_ADITYAKUMAR' was properly closed.
+[0m22:10:29.868504 [error] [Dummy-1   ]: Encountered an error:
+Failed to use database DBT_VW: 002043 (02000): SQL compilation error:
+Object does not exist, or operation cannot be performed.
+[0m22:10:29.878909 [error] [Dummy-1   ]: Traceback (most recent call last):
+  File "_udf_code.py", line 4381, in new_open_method
+    use_database_with_error_interception(new_session, params_dict, creds.database, scrub=scrub)
+  File "_udf_code.py", line 4753, in use_database_with_error_interception
+    return _intercept_user_errors("session.use_database", params_dict, lambda: session.use_database(database), scrub=scrub)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "_udf_code.py", line 4629, in _intercept_user_errors
+    return operation_callable()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "_udf_code.py", line 4753, in <lambda>
+    return _intercept_user_errors("session.use_database", params_dict, lambda: session.use_database(database), scrub=scrub)
+                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/session.py", line 3919, in use_database
+    self._use_object(database, "database")
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/session.py", line 3980, in _use_object
+    self._run_query(query)
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/session.py", line 2837, in _run_query
+    return self._conn.run_query(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 133, in wrap
+    raise ex
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 127, in wrap
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 520, in run_query
+    raise ex
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 505, in run_query
+    results_cursor = self.execute_and_notify_query_listener(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 446, in execute_and_notify_query_listener
+    raise ex
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 437, in execute_and_notify_query_listener
+    results_cursor = self._cursor.execute(query, **kwargs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "_udf_code.py", line 3782, in wrapper
+    return original_execute(self, sql, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/connector/cursor.py", line 1092, in execute
+    Error.errorhandler_wrapper(
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/connector/errors.py", line 232, in errorhandler_wrapper
+    handed_over = Error.hand_to_other_handler(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/connector/errors.py", line 287, in hand_to_other_handler
+    cursor.errorhandler(connection, cursor, error_class, error_value)
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/connector/errors.py", line 165, in default_errorhandler
+    raise error_class(
+snowflake.connector.errors.ProgrammingError: 002043 (02000): SQL compilation error:
+Object does not exist, or operation cannot be performed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/snowflake/connections.py", line 341, in exception_handler
+    yield
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/sql/connections.py", line 146, in add_query
+    cursor = connection.handle.cursor()
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/contracts/connection.py", line 96, in handle
+    self._handle.resolve(self)
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/contracts/connection.py", line 120, in resolve
+    return self.opener(connection)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "_udf_code.py", line 4383, in new_open_method
+    raise ValueError(f"Failed to use database {_scrub(creds.database)}: {_scrub(str(e))}") from (Exception(f"{type(e).__name__}: {_scrub(str(e))}") if should_scrub_secrets else e)
+ValueError: Failed to use database DBT_VW: 002043 (02000): SQL compilation error:
+Object does not exist, or operation cannot be performed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "_udf_code.py", line 4381, in new_open_method
+    use_database_with_error_interception(new_session, params_dict, creds.database, scrub=scrub)
+  File "_udf_code.py", line 4753, in use_database_with_error_interception
+    return _intercept_user_errors("session.use_database", params_dict, lambda: session.use_database(database), scrub=scrub)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "_udf_code.py", line 4629, in _intercept_user_errors
+    return operation_callable()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "_udf_code.py", line 4753, in <lambda>
+    return _intercept_user_errors("session.use_database", params_dict, lambda: session.use_database(database), scrub=scrub)
+                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/session.py", line 3919, in use_database
+    self._use_object(database, "database")
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/session.py", line 3980, in _use_object
+    self._run_query(query)
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/session.py", line 2837, in _run_query
+    return self._conn.run_query(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 133, in wrap
+    raise ex
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 127, in wrap
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 520, in run_query
+    raise ex
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 505, in run_query
+    results_cursor = self.execute_and_notify_query_listener(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 446, in execute_and_notify_query_listener
+    raise ex
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 437, in execute_and_notify_query_listener
+    results_cursor = self._cursor.execute(query, **kwargs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "_udf_code.py", line 3782, in wrapper
+    return original_execute(self, sql, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/connector/cursor.py", line 1092, in execute
+    Error.errorhandler_wrapper(
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/connector/errors.py", line 232, in errorhandler_wrapper
+    handed_over = Error.hand_to_other_handler(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/connector/errors.py", line 287, in hand_to_other_handler
+    cursor.errorhandler(connection, cursor, error_class, error_value)
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/connector/errors.py", line 165, in default_errorhandler
+    raise error_class(
+snowflake.connector.errors.ProgrammingError: 002043 (02000): SQL compilation error:
+Object does not exist, or operation cannot be performed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/snowflake/connections.py", line 341, in exception_handler
+    yield
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/base/impl.py", line 1276, in execute_macro
+    result = macro_function(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt_common/clients/jinja.py", line 421, in __call__
+    return self.call_macro(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt_common/clients/jinja.py", line 389, in call_macro
+    return macro(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/jinja2/runtime.py", line 770, in __call__
+    return self._invoke(arguments, autoescape)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/jinja2/runtime.py", line 784, in _invoke
+    rv = self._func(*arguments)
+         ^^^^^^^^^^^^^^^^^^^^^^
+  File "<template>", line 21, in macro
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/jinja2/sandbox.py", line 401, in call
+    return __context.call(__obj, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/jinja2/runtime.py", line 303, in call
+    return __obj(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/clients/jinja.py", line 91, in __call__
+    return self.call_macro(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt_common/clients/jinja.py", line 389, in call_macro
+    return macro(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/jinja2/runtime.py", line 770, in __call__
+    return self._invoke(arguments, autoescape)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/jinja2/runtime.py", line 784, in _invoke
+    rv = self._func(*arguments)
+         ^^^^^^^^^^^^^^^^^^^^^^
+  File "<template>", line 59, in macro
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/jinja2/sandbox.py", line 401, in call
+    return __context.call(__obj, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/jinja2/runtime.py", line 303, in call
+    return __obj(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/clients/jinja.py", line 91, in __call__
+    return self.call_macro(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt_common/clients/jinja.py", line 389, in call_macro
+    return macro(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/jinja2/runtime.py", line 770, in __call__
+    return self._invoke(arguments, autoescape)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/jinja2/runtime.py", line 784, in _invoke
+    rv = self._func(*arguments)
+         ^^^^^^^^^^^^^^^^^^^^^^
+  File "<template>", line 33, in macro
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/jinja2/sandbox.py", line 401, in call
+    return __context.call(__obj, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/jinja2/runtime.py", line 303, in call
+    return __obj(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/clients/jinja.py", line 91, in __call__
+    return self.call_macro(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt_common/clients/jinja.py", line 389, in call_macro
+    return macro(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/jinja2/runtime.py", line 770, in __call__
+    return self._invoke(arguments, autoescape)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/jinja2/runtime.py", line 784, in _invoke
+    rv = self._func(*arguments)
+         ^^^^^^^^^^^^^^^^^^^^^^
+  File "<template>", line 52, in macro
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/jinja2/sandbox.py", line 401, in call
+    return __context.call(__obj, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/jinja2/runtime.py", line 303, in call
+    return __obj(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt_common/record.py", line 507, in record_replay_wrapper
+    return func_to_record(*call_args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/base/impl.py", line 438, in execute
+    return self.connections.execute(sql=sql, auto_begin=auto_begin, fetch=fetch, limit=limit)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/snowflake/connections.py", line 538, in execute
+    _, cursor = self.add_query(sql, auto_begin)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/snowflake/connections.py", line 575, in add_query
+    connection, cursor = self._add_standard_queries(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/snowflake/connections.py", line 631, in _add_standard_queries
+    connection, cursor = self.add_standard_query(query, **kwargs)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/snowflake/connections.py", line 549, in add_standard_query
+    return super().add_query(self._add_query_comment(sql), **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/sql/connections.py", line 130, in add_query
+    with self.exception_handler(sql):
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/snowflake/connections.py", line 374, in exception_handler
+    self.rollback_if_open()
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/base/connections.py", line 125, in rollback_if_open
+    if conn is not None and conn.handle and conn.transaction_open:
+                            ^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/contracts/connection.py", line 96, in handle
+    self._handle.resolve(self)
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/contracts/connection.py", line 120, in resolve
+    return self.opener(connection)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "_udf_code.py", line 4383, in new_open_method
+    raise ValueError(f"Failed to use database {_scrub(creds.database)}: {_scrub(str(e))}") from (Exception(f"{type(e).__name__}: {_scrub(str(e))}") if should_scrub_secrets else e)
+ValueError: Failed to use database DBT_VW: 002043 (02000): SQL compilation error:
+Object does not exist, or operation cannot be performed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "_udf_code.py", line 4381, in new_open_method
+    use_database_with_error_interception(new_session, params_dict, creds.database, scrub=scrub)
+  File "_udf_code.py", line 4753, in use_database_with_error_interception
+    return _intercept_user_errors("session.use_database", params_dict, lambda: session.use_database(database), scrub=scrub)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "_udf_code.py", line 4629, in _intercept_user_errors
+    return operation_callable()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "_udf_code.py", line 4753, in <lambda>
+    return _intercept_user_errors("session.use_database", params_dict, lambda: session.use_database(database), scrub=scrub)
+                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/session.py", line 3919, in use_database
+    self._use_object(database, "database")
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/session.py", line 3980, in _use_object
+    self._run_query(query)
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/session.py", line 2837, in _run_query
+    return self._conn.run_query(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 133, in wrap
+    raise ex
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 127, in wrap
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 520, in run_query
+    raise ex
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 505, in run_query
+    results_cursor = self.execute_and_notify_query_listener(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 446, in execute_and_notify_query_listener
+    raise ex
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/snowpark/_internal/server_connection.py", line 437, in execute_and_notify_query_listener
+    results_cursor = self._cursor.execute(query, **kwargs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "_udf_code.py", line 3782, in wrapper
+    return original_execute(self, sql, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/connector/cursor.py", line 1092, in execute
+    Error.errorhandler_wrapper(
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/connector/errors.py", line 232, in errorhandler_wrapper
+    handed_over = Error.hand_to_other_handler(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/connector/errors.py", line 287, in hand_to_other_handler
+    cursor.errorhandler(connection, cursor, error_class, error_value)
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/snowflake/connector/errors.py", line 165, in default_errorhandler
+    raise error_class(
+snowflake.connector.errors.ProgrammingError: 002043 (02000): SQL compilation error:
+Object does not exist, or operation cannot be performed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/cli/requires.py", line 153, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/cli/requires.py", line 103, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/cli/requires.py", line 235, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/cli/requires.py", line 264, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/cli/requires.py", line 311, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/cli/requires.py", line 328, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/cli/main.py", line 341, in compile
+    results = task.run()
+              ^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/task/runnable.py", line 619, in run
+    result = self.execute_with_hooks(selected_uids)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/task/runnable.py", line 557, in execute_with_hooks
+    before_run_status = self.before_run(adapter, selected_uids)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/task/runnable.py", line 533, in before_run
+    self.populate_adapter_cache(adapter)
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/task/runnable.py", line 522, in populate_adapter_cache
+    adapter.set_relations_cache(cachable_nodes)
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/base/impl.py", line 618, in set_relations_cache
+    self._relations_cache_for_schemas(relation_configs, required_schemas)
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/base/impl.py", line 594, in _relations_cache_for_schemas
+    for relation in future.result():
+                    ^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt_common/utils/executor.py", line 20, in connected
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/snowflake/impl.py", line 258, in list_relations_without_caching
+    schema_objects = self.execute_macro(LIST_RELATIONS_MACRO_NAME, kwargs=kwargs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/base/impl.py", line 1275, in execute_macro
+    with self.connections.exception_handler(f"macro {macro_name}"):
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/snowflake/connections.py", line 374, in exception_handler
+    self.rollback_if_open()
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/base/connections.py", line 125, in rollback_if_open
+    if conn is not None and conn.handle and conn.transaction_open:
+                            ^^^^^^^^^^^
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/contracts/connection.py", line 96, in handle
+    self._handle.resolve(self)
+  File "/usr/lib/python_udf/0580f10fe34cf31aa46ce3f3148f0eb9463687724d366f60d9a9672ea230f2cb/lib/python3.11/site-packages/dbt/adapters/contracts/connection.py", line 120, in resolve
+    return self.opener(connection)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "_udf_code.py", line 4383, in new_open_method
+    raise ValueError(f"Failed to use database {_scrub(creds.database)}: {_scrub(str(e))}") from (Exception(f"{type(e).__name__}: {_scrub(str(e))}") if should_scrub_secrets else e)
+ValueError: Failed to use database DBT_VW: 002043 (02000): SQL compilation error:
+Object does not exist, or operation cannot be performed.
+
+[0m22:10:29.881613 [debug] [Dummy-1   ]: Resource report: {"command_name": "compile", "command_success": false, "command_wall_clock_time": 2.9924772, "process_in_blocks": "0", "process_kernel_time": 0.78, "process_mem_max_rss": "477764", "process_out_blocks": "0", "process_user_time": 4.7}
+[0m22:10:29.882257 [debug] [Dummy-1   ]: Command `cli compile` failed at 22:10:29.881999 after 2.99 seconds
+[0m22:10:29.882768 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 22:11:31.916544 | 89a1f9fc-30fd-4dcf-9749-75805ef5640c ==============================
+[0m22:11:31.916544 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m22:11:31.917425 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/tmp/dbt_effective_profiles_xm9zwcxi', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/tmp/dbt/logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt ', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'False'}
+[0m22:11:32.107596 [info ] [Dummy-1   ]: State adapter: dbt-state v0.0.0 is disabled
+[0m22:11:32.195797 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m22:11:32.729629 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m22:11:32.827533 [info ] [Dummy-1   ]: Unable to do partial parsing because profile has changed
+[0m22:11:33.986153 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m22:11:33.988069 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m22:11:34.017442 [info ] [Dummy-1   ]: Found 1 model, 474 macros
+[0m22:11:34.019225 [info ] [Dummy-1   ]: 
+[0m22:11:34.019732 [info ] [Dummy-1   ]: Concurrency: 8 threads (target='dev')
+[0m22:11:34.020244 [info ] [Dummy-1   ]: 
+[0m22:11:34.020964 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m22:11:34.023136 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_DB_ADITYAKUMAR'
+[0m22:11:34.107870 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DB_ADITYAKUMAR"
+[0m22:11:34.108517 [debug] [ThreadPool]: On list_DBT_DB_ADITYAKUMAR: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "_ANALYTICS_DEMO", "target_name": "dev", "connection_name": "list_DBT_DB_ADITYAKUMAR"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m22:11:34.109008 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:11:34.412813 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.304 seconds
+[0m22:11:34.417179 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DB_ADITYAKUMAR"
+[0m22:11:34.417665 [debug] [ThreadPool]: On list_DBT_DB_ADITYAKUMAR: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "_ANALYTICS_DEMO", "target_name": "dev", "connection_name": "list_DBT_DB_ADITYAKUMAR"} */
+show objects in DBT_DB.ADITYAKUMAR
+    limit 10000
+    
+;
+[0m22:11:34.463689 [debug] [ThreadPool]: Snowflake adapter: Snowflake query id: 01c822d3-000e-2453-0002-e3420004960a
+[0m22:11:34.464324 [debug] [ThreadPool]: Snowflake adapter: Snowflake error: 002043 (02000): SQL compilation error:
+Object does not exist, or operation cannot be performed.
+[0m22:11:34.464927 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro list_relations_without_caching
+[0m22:11:34.465418 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m22:11:34.481218 [debug] [Thread-2 (]: Began running node model._ANALYTICS_DEMO.first_model
+[0m22:11:34.481893 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_DBT_DB_ADITYAKUMAR, now model._ANALYTICS_DEMO.first_model)
+[0m22:11:34.482417 [debug] [Thread-2 (]: Began compiling node model._ANALYTICS_DEMO.first_model
+[0m22:11:34.490787 [debug] [Thread-2 (]: Writing injected SQL for node "model._ANALYTICS_DEMO.first_model"
+[0m22:11:34.491578 [debug] [Thread-2 (]: Began executing node model._ANALYTICS_DEMO.first_model
+[0m22:11:34.492447 [debug] [Thread-2 (]: Finished running node model._ANALYTICS_DEMO.first_model
+[0m22:11:34.495129 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m22:11:34.495565 [debug] [Dummy-1   ]: Connection 'model._ANALYTICS_DEMO.first_model' was properly closed.
+[0m22:11:34.496335 [debug] [Dummy-1   ]: Command end result
+[0m22:11:34.515978 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m22:11:34.517630 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m22:11:34.524166 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m22:11:34.525748 [debug] [Dummy-1   ]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 2.6822734, "process_in_blocks": "0", "process_kernel_time": 0.78, "process_mem_max_rss": "537340", "process_out_blocks": "0", "process_user_time": 4.56}
+[0m22:11:34.526381 [debug] [Dummy-1   ]: Command `cli compile` succeeded at 22:11:34.526120 after 2.68 seconds
+[0m22:11:34.526937 [debug] [Dummy-1   ]: Flushing usage events
